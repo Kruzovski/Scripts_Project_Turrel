@@ -12,14 +12,11 @@ public class MyJoysticSettings : MonoBehaviour, IDragHandler, IPointerDownHandle
     [SerializeField] private Image _joystick;
     [SerializeField] private Image _joystickArea;
 
-    private Vector2 _joystickBackgroundStartPosition;
-
-    protected Vector2 _inputVector;
-
     [SerializeField] private Color _inActivejoystickColor;
     [SerializeField] private Color _activejoystickColor;
 
-    //private bool _joystickIsActive = false;
+    private Vector2 _joystickBackgroundStartPosition;
+    protected Vector2 _inputVector;
 
     private void Start()
     {
