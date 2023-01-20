@@ -4,24 +4,13 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    public int WaveSize;
-    //Размер волны спавна монстров В Юнити
-
-    public GameObject EnemyPrefab;
-    //Тип спавна монстра (выбор в Юнити)
-
-    public float EnemyInterval;
-    //Временной интервал спавна монстра
-
-    public Transform spawnPoint;
-    //Выбор точки спавна в Юнити
-
-    public float startTime;
-    //Выбор времени, через которое с начала уровня начнётся спавна в Юнити
-
-    public Transform[] WayPoints;
-
-    int enemyCount = 0;
+    [SerializeField] public int WaveSize;
+    [SerializeField] public GameObject EnemyPrefab;
+    [SerializeField] public float EnemyInterval;
+    [SerializeField] public Transform spawnPoint;
+    [SerializeField] public float startTime;
+    [SerializeField] public Transform[] WayPoints;
+    [SerializeField] int enemyCount = 0;
 
     void Start()
     {
