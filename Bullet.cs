@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public GameObject BloodPrefab;
-    public Transform BloodSpawnPoint;
-    public float lifetime = 3;
+    [SerializeField] public GameObject BloodPrefab;
+    [SerializeField] public Transform BloodSpawnPoint;
+    [SerializeField] public float lifetime = 3;
 
     void Awake()
     {
