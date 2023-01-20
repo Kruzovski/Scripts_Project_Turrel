@@ -5,15 +5,10 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
 
-    public float Speed;
-    // скорость движения
-
-    public Transform[] WayPoints;
-
+    [SerializeField] public float Speed;
+    [SerializeField] public Transform[] WayPoints;
     int curWayPointIndex = 0;
-    // местоназначение
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (curWayPointIndex < WayPoints.Length)
