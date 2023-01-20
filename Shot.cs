@@ -8,11 +8,11 @@ using UnityEngine.SceneManagement;
 public class Shot : MonoBehaviour
 {
     private bool touche;
-    public Transform bulletSpawnPoint;
-    public GameObject bulletPrefab;
-    public float bulletSpeed = 10;
-    private float timeBetweenShots;
-    public float timeStartShots;
+    [SerializeField] public Transform bulletSpawnPoint;
+    [SerializeField] public GameObject bulletPrefab;
+    [SerializeField] public float bulletSpeed = 10;
+    [SerializeField] private float timeBetweenShots;
+    [SerializeField] public float timeStartShots;
 
     public void Fire()
     {
