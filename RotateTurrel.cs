@@ -15,14 +15,6 @@ public class RotateTurrel : MonoBehaviour
         _characterController = GetComponent<CharacterController>();
     }
 
-    /*
-    public void MoveCharacter(Vector3 moveDirection)
-    {
-        moveDirection = moveDirection * moveSpeed;
-        _characterController.Move(moveDirection * Time.deltaTime);
-    }
-    */
-
     public void RotateCharacter(Vector3 moveDirection)
     {
 
@@ -32,5 +24,4 @@ public class RotateTurrel : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(newDirection);
         }
     }
-
 }
