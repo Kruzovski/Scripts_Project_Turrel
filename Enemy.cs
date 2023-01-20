@@ -5,19 +5,19 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public static int health;
-    public int HP;
-    public GameObject Character;
-    public GameObject Head;
-    public GameObject BodyPrefab;
-    public GameObject ButtPrefab;
-    public GameObject LeftArm1Prefab;
-    public GameObject LeftArm2Prefab;
-    public GameObject RightArm1Prefab;
-    public GameObject RightArm2Prefab;
-    public GameObject LeftLeg1Prefab;
-    public GameObject LeftLeg2Prefab;
-    public GameObject RightLeg1Prefab;
-    public GameObject RightLeg2Prefab;
+    [SerializeField] public int HP;
+    [SerializeField] public GameObject Character;
+    [SerializeField] public GameObject Head;
+    [SerializeField] public GameObject BodyPrefab;
+    [SerializeField] public GameObject ButtPrefab;
+    [SerializeField] public GameObject LeftArm1Prefab;
+    [SerializeField] public GameObject LeftArm2Prefab;
+    [SerializeField] public GameObject RightArm1Prefab;
+    [SerializeField] public GameObject RightArm2Prefab;
+    [SerializeField] public GameObject LeftLeg1Prefab;
+    [SerializeField] public GameObject LeftLeg2Prefab;
+    [SerializeField] public GameObject RightLeg1Prefab;
+    [SerializeField] public GameObject RightLeg2Prefab;
 
     private void OnTriggerEnter(Collider collision)
     {
