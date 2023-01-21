@@ -30,6 +30,5 @@ public class Bullet : MonoBehaviour
             var Blood = Instantiate(BloodPrefab, BloodSpawnPoint.position, BloodSpawnPoint.rotation);
             Blood = Instantiate(BloodPrefab, BloodSpawnPoint.position, BloodSpawnPoint.rotation);
         }
-
     }
 }
