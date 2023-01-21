@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.CompareTag("Head"))
         {
-            Enemy.health += 5;
+            Enemy.damage += 5;
             var Blood = Instantiate(BloodPrefab, BloodSpawnPoint.position, BloodSpawnPoint.rotation);
             Blood = Instantiate(BloodPrefab, BloodSpawnPoint.position, BloodSpawnPoint.rotation);
             Blood = Instantiate(BloodPrefab, BloodSpawnPoint.position, BloodSpawnPoint.rotation);
@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
 
         if (collision.CompareTag("Body"))
         {
-            Enemy.health += 2;
+            Enemy.damage += 2;
             var Blood = Instantiate(BloodPrefab, BloodSpawnPoint.position, BloodSpawnPoint.rotation);
             Blood = Instantiate(BloodPrefab, BloodSpawnPoint.position, BloodSpawnPoint.rotation);
         }
