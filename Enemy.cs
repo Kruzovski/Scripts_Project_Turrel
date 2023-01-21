@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public static int health;
+    public static int damage;
     [SerializeField] public int HP;
     [SerializeField] public GameObject Character;
 
@@ -13,21 +13,17 @@ public class Enemy : MonoBehaviour
         if (collision.CompareTag("Bullet"))
         {
             Destroy(collision.gameObject);
-            Debug.Log(health);
         }
 
-        if (health >= HP)
+        if (damage >= HP)
         {
-            health = 0;
-            Debug.Log(health);
             KillEnemy();
-            health = 0;
+            damage = 0;
         }
     }
 
     void KillEnemy()
     {
-
         Character.GetComponent<Move>().Speed = 0;
         Character.GetComponent<BoxCollider>().enabled = false;
 
