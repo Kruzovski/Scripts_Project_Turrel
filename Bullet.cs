@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] public GameObject BloodPrefab;
-    [SerializeField] public Transform BloodSpawnPoint;
     [SerializeField] public float lifetime = 3;
 
     void Awake()
@@ -18,17 +17,25 @@ public class Bullet : MonoBehaviour
         if (collision.CompareTag("Head"))
         {
             Enemy.damage += 5;
-            var Blood = Instantiate(BloodPrefab, BloodSpawnPoint.position, BloodSpawnPoint.rotation);
-            Blood = Instantiate(BloodPrefab, BloodSpawnPoint.position, BloodSpawnPoint.rotation);
-            Blood = Instantiate(BloodPrefab, BloodSpawnPoint.position, BloodSpawnPoint.rotation);
-            Blood = Instantiate(BloodPrefab, BloodSpawnPoint.position, BloodSpawnPoint.rotation);
+
+            foreach (Transform child in transform)
+            {
+                var Blood = Instantiate(BloodPrefab, child.position, child.rotation);
+            }
+            
+            Destroy(gameObject);
         }
 
         if (collision.CompareTag("Body"))
         {
             Enemy.damage += 2;
-            var Blood = Instantiate(BloodPrefab, BloodSpawnPoint.position, BloodSpawnPoint.rotation);
-            Blood = Instantiate(BloodPrefab, BloodSpawnPoint.position, BloodSpawnPoint.rotation);
+
+            foreach (Transform child in transform)
+            {
+                var Blood = Instantiate(BloodPrefab, child.position, child.rotation);
+            }
+            
+            Destroy(gameObject);
         }
     }
 }
