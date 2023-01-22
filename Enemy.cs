@@ -10,28 +10,24 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.CompareTag("Bullet"))
-        {
-            Destroy(collision.gameObject);
-        }
-
         if (damage >= HP)
         {
+            Character.GetComponent<Animator>().enabled = false;
             KillEnemy();
+            Character.GetComponent<BoxCollider>().enabled = false;
             damage = 0;
+            }
         }
-    }
 
-    void KillEnemy()
-    {
-        Character.GetComponent<Move>().Speed = 0;
-        Character.GetComponent<BoxCollider>().enabled = false;
-
-        foreach (Transform child in transform)
+        void KillEnemy()
         {
-            child.GetComponent<Rigidbody>().useGravity = true;
-            child.GetComponent<BoxCollider>().isTrigger = false;
-            child.transform.gameObject.tag = "Obstacle";
+            Character.GetComponent<Move>().Speed = 0;
+
+            foreach (Transform child in transform)
+            {
+                child.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                child.GetComponent<Rigidbody>().useGravity = true;
+                child.transform.gameObject.tag = "Obstacle";
+            }
         }
-    }
-}
+ }
